@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd $HOME
+rm -rf gitolite-admin td
+tar xf client-rollback.tar
+mkdir td
+
+$TESTDIR/rollback.server
