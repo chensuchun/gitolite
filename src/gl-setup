@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GL_PACKAGE_CONF=/tmp/share/gitolite/conf
+GL_PACKAGE_CONF=/usr/share/gitolite/conf
 # must be the same as the value for the same variable in
 # $GL_PACKAGE_CONF/example.gitolite.rc.  Sorry about the catch-22 :)
 
@@ -21,7 +21,7 @@ GL_PACKAGE_CONF=/tmp/share/gitolite/conf
 die() { echo "$@" >&2; exit 1; }
 
 get_rc_val() {
-    `dirname $0`/gl-query-rc $1
+    /usr/bin/gl-query-rc $1
 }
 
 TEMPDIR=`mktemp -d -t tmp.XXXXXXXXXX`

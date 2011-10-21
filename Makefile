@@ -15,7 +15,8 @@ $(branch):	$(branch).tar
 
 %.tar:	.GITOLITE-VERSION
 	git describe --tags --long $* > conf/VERSION
-	git archive $* > gitolite-$@
+	git archive --prefix=gitolite-$*/ $* > gitolite-$@
 	tar -r -f gitolite-$@ conf/VERSION
+	tar -r -f gitolite-$@ gitolite.spec
+	gzip -f gitolite-$@
 	rm conf/VERSION
-	cp -v gitolite-$@ /tmp

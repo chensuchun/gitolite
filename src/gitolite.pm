@@ -555,7 +555,7 @@ sub setup_gitweb_access
 
 sub report_version {
     my($user) = @_;
-    my $gl_version = slurp( ($GL_PACKAGE_CONF || "$GL_ADMINDIR/conf") . "/VERSION" );
+    my $gl_version = system("rpm", "-q", "--qf", '%{version}-%{release}', 'gitolite');
     chomp($gl_version);
     my $git_version = `git --version`;
     $git_version =~ s/^git version //;

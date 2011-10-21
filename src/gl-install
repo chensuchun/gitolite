@@ -63,7 +63,7 @@ umask($REPO_UMASK);
 wrap_mkdir($REPO_BASE);
 wrap_mkdir($GL_ADMINDIR, 0700);
 # mkdir $GL_ADMINDIR's subdirs
-for my $dir (qw(conf doc keydir logs src hooks hooks/common hooks/gitolite-admin)) {
+for my $dir (qw(conf keydir logs src hooks hooks/common hooks/gitolite-admin)) {
     # some of them will stay empty; too lazy to fix right now ;-)
     wrap_mkdir("$GL_ADMINDIR/$dir", 0700);
 }
@@ -84,7 +84,7 @@ unless (-f $GL_CONF or $GL_PACKAGE_CONF) {
                 RW+     =   yourname
     2.  copy "yourname.pub" to $GL_ADMINDIR/keydir
     3.  run this command
-            $GL_ADMINDIR/src/gl-compile-conf
+            gl-compile-conf
 EOF
 }
 

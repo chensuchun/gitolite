@@ -21,6 +21,8 @@ $GL_CONF_COMPILED="$GL_ADMINDIR/conf/gitolite.conf-compiled.pm";
 #            (PACKAGE MAINTAINERS: PLEASE READ doc/packaging.mkd)
 # $GL_PACKAGE_CONF = "";
 # $GL_PACKAGE_HOOKS = "";
+$GL_PACKAGE_CONF = "/usr/share/gitolite/conf";
+$GL_PACKAGE_HOOKS = "/usr/share/gitolite/hooks";
 
 # ------------------------------------------------------------------------------
 # most often used/changed variables

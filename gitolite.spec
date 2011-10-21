@@ -48,7 +48,7 @@ elsewhere in the doc/ directory.
 
 
 %prep
-%setup -qn gitolite-%{version}
+%setup -qn gitolite-v%{version}
 # Don't create backups; would mess with %%install
 #%patch0 -p1
 #%patch1 -p1
@@ -105,9 +105,9 @@ exit 0
 %{perl_vendorlib}/*
 %{_datadir}/%{name}
 # make homedir non world readable
-%attr(750,%{name},%{name}) %{gitolite_homedir}
-%attr(750,%{name},%{name}) %{gitolite_homedir}/.ssh
-%config(noreplace) %attr(640,%{name},%{name}) %{gitolite_homedir}/.ssh/authorized_keys
+%attr(750,%{username},%{username}) %{gitolite_homedir}
+%attr(750,%{username},%{username}) %{gitolite_homedir}/.ssh
+%config(noreplace) %attr(640,%{username},%{username}) %{gitolite_homedir}/.ssh/authorized_keys
 %doc doc/COPYING doc/*.html
 
 
